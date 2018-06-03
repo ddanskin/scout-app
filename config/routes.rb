@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :destination_ratings
   get 'home/index'
   get 'home/dashboard'
-    devise_for :users
+    devise_for :users, controllers: {
+        sessions: 'users/sessions'
+    }
     
     root to: 'home#index'
 
