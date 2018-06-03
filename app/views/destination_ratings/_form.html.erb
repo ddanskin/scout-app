@@ -1,0 +1,32 @@
+<%= form_with(model: destination_rating, local: true) do |form| %>
+  <% if destination_rating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(destination_rating.errors.count, "error") %> prohibited this destination_rating from being saved:</h2>
+
+      <ul>
+      <% destination_rating.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_id %>
+    <%= form.number_field :location_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
