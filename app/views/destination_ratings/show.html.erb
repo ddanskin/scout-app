@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @destination_rating.user_id %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @destination_rating.location_id %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @destination_rating.rating %>
+</p>
+
+<%= link_to 'Edit', edit_destination_rating_path(@destination_rating) %> |
+<%= link_to 'Back', destination_ratings_path %>

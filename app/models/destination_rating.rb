@@ -1,0 +1,2 @@
+class DestinationRating < ApplicationRecord
+end
