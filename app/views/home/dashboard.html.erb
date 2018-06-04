@@ -5,38 +5,15 @@
     <div class="jumbotron">
         <table class="table">
             <tr>
-                <th>Destination</th>
+                <th>Destinations</th>
             </tr>
+        <% @destinations.each do |destination| %>
             <tr>
-                <td><span>result one</span><%= link_to "more info","https://www.lonelyplanet.com/", target: "_blank", rel: "nofollow" %><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
+                <td><%= destination.name %></td>
+                <td><%= link_to "more info", "#{destination.url}", target: "_blank", rel: "nofollow" %></td>
+                <td><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
             </tr>
-            <tr>
-                <td><span>result one</span><%= link_to "more info","https://www.lonelyplanet.com/", target: "_blank", rel: "nofollow" %><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
-            </tr>
-            <tr>
-                <td><span>result one</span><%= link_to "more info","https://www.lonelyplanet.com/", target: "_blank", rel: "nofollow" %><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
-            </tr>
-            <tr>
-                <td><span>result one</span><%= link_to "more info","https://www.lonelyplanet.com/", target: "_blank", rel: "nofollow" %><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
-            </tr>
-            <tr>
-                <td><span>result one</span><%= link_to "more info","https://www.lonelyplanet.com/", target: "_blank", rel: "nofollow" %><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
-            </tr>
-            <tr>
-                <td><span>result one</span><%= link_to "more info","https://www.lonelyplanet.com/", target: "_blank", rel: "nofollow" %><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
-            </tr>
-            <tr>
-                <td><span>result one</span><%= link_to "more info","https://www.lonelyplanet.com/", target: "_blank", rel: "nofollow" %><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
-            </tr>
-            <tr>
-                <td><span>result one</span><%= link_to "more info","https://www.lonelyplanet.com/", target: "_blank", rel: "nofollow" %><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
-            </tr>
-            <tr>
-                <td><span>result one</span><%= link_to "more info","https://www.lonelyplanet.com/", target: "_blank", rel: "nofollow" %><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
-            </tr>
-            <tr>
-                <td><span>result one</span><%= link_to "more info","https://www.lonelyplanet.com/", target: "_blank", rel: "nofollow" %><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
-            </tr>
+        <% end %>
         </table>
     </div>
 </div>
