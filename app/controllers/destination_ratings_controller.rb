@@ -69,6 +69,6 @@ class DestinationRatingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def destination_rating_params
-      params.require(:destination_rating).permit(:user_id, :location_id, :rating)
+      params.require(:destination_rating).permit(:rating)
     end
 end
