@@ -17,7 +17,7 @@ class DestinationRatingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create destination_rating" do
     assert_difference('DestinationRating.count') do
-      post destination_ratings_url, params: { destination_rating: { location_id: @destination_rating.location_id, rating: @destination_rating.rating, user_id: @destination_rating.user_id } }
+      post destination_ratings_url, params: { destination_rating: { rating: @destination_rating.rating } }
     end
 
     assert_redirected_to destination_rating_url(DestinationRating.last)
@@ -34,7 +34,7 @@ class DestinationRatingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update destination_rating" do
-    patch destination_rating_url(@destination_rating), params: { destination_rating: { location_id: @destination_rating.location_id, rating: @destination_rating.rating, user_id: @destination_rating.user_id } }
+    patch destination_rating_url(@destination_rating), params: { destination_rating: { rating: @destination_rating.rating } }
     assert_redirected_to destination_rating_url(@destination_rating)
   end
 
