@@ -1,2 +1,19 @@
-<h1>Home#dashboard</h1>
-<p>Find me in app/views/home/dashboard.html.erb</p>
+<%= render(:partial => "layouts/header") %>
+
+<div class="main">
+    <h5>Welcome, <%= current_user.email %></h5>
+    <div class="jumbotron">
+        <table class="table">
+            <tr>
+                <th>Destinations</th>
+            </tr>
+        <% @destinations.each do |destination| %>
+            <tr>
+                <td><%= destination.name %></td>
+                <td><%= link_to "more info", "#{destination.url}", target: "_blank", rel: "nofollow" %></td>
+                <td><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
+            </tr>
+        <% end %>
+        </table>
+    </div>
+</div>

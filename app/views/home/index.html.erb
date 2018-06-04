@@ -1,2 +1,9 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="ui masthead center aligned segment">
+    <div class="ui text container">
+        <h1 class="ui header">Scout</h1>
+        <h2>Let us help you find your next vacation destination!</h2>
+        <%= link_to('Register', new_user_registration_path, :class => "ui huge primary button") %>
+        <%= link_to('Login', new_user_session_path, :class => "ui huge primary button") %>
+    </div>
+    <img src="/assets/ThreeTables.jpg">
+</div>
