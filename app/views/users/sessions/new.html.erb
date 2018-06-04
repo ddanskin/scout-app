@@ -1,10 +1,10 @@
+<div class="row justify-content-md-center">
+  <div class="col-12 col-md-6">
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
+<%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <p>Sign in and start planning your next vacation!</p>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
   <div class="field">
     <%= f.label :password %><br />
@@ -12,15 +12,14 @@
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
   <% end -%>
 
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
+<p>Don't have an account?</p>
 <%= render "users/shared/links" %>
+</div>
+</div>
