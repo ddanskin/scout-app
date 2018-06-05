@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_04_215011) do
+ActiveRecord::Schema.define(version: 2018_06_05_183332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "destination_cost_indices", force: :cascade do |t|
+    t.decimal "avg_mcmeal", default: "0.0"
+    t.decimal "avg_airfare", default: "0.0"
+    t.decimal "avg_hotel", default: "0.0"
+    t.bigint "destination_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["destination_id"], name: "index_destination_cost_indices_on_destination_id"
+  end
 
   create_table "destination_ratings", force: :cascade do |t|
     t.integer "rating"
@@ -50,6 +60,7 @@ ActiveRecord::Schema.define(version: 2018_06_04_215011) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "destination_cost_indices", "destinations"
   add_foreign_key "destination_ratings", "destinations"
   add_foreign_key "destination_ratings", "users"
 end
