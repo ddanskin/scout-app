@@ -6,13 +6,14 @@ class HomeController < ApplicationController
     end
 
     def dashboard
-        @destinations = get_destination_list(current_user)
+        @ratings = DestinationRating.where(user_id: current_user.id)
+        @destinations = get_destination_list(current_user, @ratings)
+
     end
 
     private
 
-    def get_destination_list(current_user)
-        ratings = DestinationRating.where(user_id: current_user.id)
+    def get_destination_list(current_user, ratings)
         ratings = ratings.sort{ |a,b| b.rating <=> a.rating }
         destinations = []
         ratings.each do |loc|

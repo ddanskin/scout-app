@@ -4,7 +4,8 @@ class DestinationsController < ApplicationController
   # GET /destinations
   # GET /destinations.json
   def index
-    @destinations = Destination.all
+    @destinations = get_destination_list(current_user)
+    @ratings = DestinationRating.where(user_id: current_user.id)
   end
 
   # GET /destinations/1
@@ -70,5 +71,15 @@ class DestinationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def destination_params
       params.require(:destination).permit(:name, :airport_code, :guide)
+    end
+
+    def get_destination_list(current_user)
+        ratings = DestinationRating.where(user_id: current_user.id)
+        ratings = ratings.sort{ |a,b| b.rating <=> a.rating }
+        destinations = []
+        ratings.each do |loc|
+            destinations.push(Destination.find_by(id: loc.destination_id))
+        end
+        return destinations
     end
 end
