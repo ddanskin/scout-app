@@ -1,24 +1,15 @@
-# README
+# Scout App
+Most individuals have limited vacation time and resources, this app will help them narrow down their vacation options to those that will give them a better return on their investment. Scout is a full stack application that uses a current cost index to help a user compare locations and find their next vacation destination.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# To Use
+Log in with email: mary@email.com password: test123
 
-Things you may want to cover:
+# Built with
+* Rails 5
+* PostgreSQL
+* Devise
+* Bootstrap
+* bootstrap_form gem
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# License
+MIT &copy; ddanskin
