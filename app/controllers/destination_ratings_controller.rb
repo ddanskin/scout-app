@@ -42,7 +42,7 @@ class DestinationRatingsController < ApplicationController
   def update
     respond_to do |format|
       if @destination_rating.update(destination_rating_params)
-        format.html { redirect_to @destination_rating, notice: 'Destination rating was successfully updated.' }
+        format.html { redirect_to home_dashboard_path, notice: 'Destination rating was successfully updated.' }
         format.json { render :show, status: :ok, location: @destination_rating }
       else
         format.html { render :edit }

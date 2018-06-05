@@ -1,4 +1,4 @@
-<%= form_with(model: destination_rating, local: true) do |form| %>
+<%= form_with(model: destination_rating, remote: true, local: true) do |form| %>
   <% if destination_rating.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(destination_rating.errors.count, "error") %> prohibited this destination_rating from being saved:</h2>
