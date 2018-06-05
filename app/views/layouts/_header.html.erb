@@ -9,5 +9,6 @@
             <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "nav-link") %>
         </li>
     </ul>
+    <h6>Welcome, <%= current_user.email %></h6>
 </nav>
 <% end%>

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_06_05_183332) do
     t.decimal "avg_mcmeal", default: "0.0"
     t.decimal "avg_airfare", default: "0.0"
     t.decimal "avg_hotel", default: "0.0"
+    t.text "currency"
     t.bigint "destination_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
