@@ -7,10 +7,11 @@
         <div class="form segment">
             <p>Don't have an acount yet? Let's get you set up.</p>
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.label :password %>
             <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "off" %>
+            <%= f.password_field :password, autocomplete: "off", hide_label: true %>
 
             <%= f.password_field :password_confirmation, autocomplete: "off" %>
 
