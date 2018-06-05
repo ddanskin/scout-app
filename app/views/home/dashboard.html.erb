@@ -1,16 +1,20 @@
 <div class="main">
-    <h5>Welcome, <%= current_user.email %></h5>
     <div class="jumbotron">
+        <h5>Your Top Destinations:</h5>
         <table class="table">
             <tr>
                 <th>Destinations</th>
+                <th>Your Rating</th>
+                <th>Currency</th>
             </tr>
         <% @destinations.each do |destination| %>
             <% @rating = get_rating(destination, current_user) %>
             <tr>
                 <td><%= link_to "#{destination.name}", "#{destination.url}", target: "_blank", rel: "nofollow" %></td>
-                <td><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td>
+                <!--<td><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td> -->
                 <td><%= render 'destination_ratings/form', destination_rating: @rating %></td>
+                <% currency = get_currency(destination) %>
+                <td><%= currency %></td>
             </tr>
         <% end %>
         </table>
