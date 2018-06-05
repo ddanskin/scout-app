@@ -1,10 +1,10 @@
 <div class="row justify-content-md-center">
-  <div class="col-12 col-md-6">
+  <div class="col-12 col-md-6 user_forms">
 <h2>Change your password</h2>
 
 <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
-    <div class="segment">
+    <div class="form_segment">
         <%= f.hidden_field :reset_password_token %>
 
             <%= f.label :password, "New password" %><br />
@@ -20,7 +20,7 @@
         </div>
     </div>
 <% end %>
-<div class="segment">
+<div class="form_segment">
     <%= render "users/shared/links" %>
 </div>
 </div>

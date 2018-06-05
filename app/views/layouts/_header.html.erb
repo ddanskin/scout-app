@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 <nav class="navbar navbar-expand-sm bg-light">
     <%= link_to('Scout', home_dashboard_path, :class => "navbar-brand" ) %>
-    <ul class="navbar-nav">
+    <ul class="navbar-nav justify-content-end">
         <li class="nav-item">
             <%= link_to('Edit Account', edit_user_registration_path, :class => "nav-link") %>
         </li>

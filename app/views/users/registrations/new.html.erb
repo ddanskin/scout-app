@@ -1,28 +1,28 @@
 <div class="row justify-content-md-center">
-    <div class="col col-6">
-    <h2>Sign up</h2>
+    <div class="col col-6 user_forms">
+        <h2>Sign up</h2>
 
-    <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-        <div class="form segment">
-            <p>Don't have an acount yet? Let's get you set up.</p>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "off", hide_label: true %>
+        <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+            <div class="form_segment">
+                <p>Don't have an acount yet? Let's get you set up.</p>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "off", hide_label: true %>
 
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                <%= f.password_field :password_confirmation, autocomplete: "off" %>
 
-            <div class="actions">
-                <%= f.submit "Sign up", :class => 'btn btn-primary' %>
+                <div class="actions">
+                    <%= f.submit "Sign up", :class => 'btn btn-primary' %>
+                </div>
             </div>
+        <% end %>
+        <div class="form_segment">
+            <p>Already have an account?</p>
+            <%= render "users/shared/links" %>
         </div>
-    <% end %>
-    <div class="segment">
-        <p>Already have an account?</p>
-        <%= render "users/shared/links" %>
     </div>
-</div>
 </div>
