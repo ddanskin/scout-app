@@ -10,6 +10,7 @@ Log in with email: mary@email.com password: test123
 * Devise
 * Bootstrap
 * bootstrap_form gem
+* Open Exchange API
 
 # License
 MIT &copy; ddanskin
