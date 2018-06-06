@@ -1,5 +1,5 @@
 // const image_urls = ["/bamboo.jpg", "/beach2.jpg", "/beach1.jpg", "/canada.jpg", "/china.jpg", "/croatia.jpg", "/paris.jpg", "/forest.jpg", "/rome.jpg"];
-let image_urls = [
+var image_urls = [
     "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "https://images.pexels.com/photos/449627/pexels-photo-449627.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
@@ -16,7 +16,7 @@ let image_urls = [
 ];
 
 $(document).ready(function() {
-    let random_background = image_urls[Math.floor(Math.random() * image_urls.length)];
+    var random_background = image_urls[Math.floor(Math.random() * image_urls.length)];
 random_background =
 
     // sets background image to a random photo each time the page loads
