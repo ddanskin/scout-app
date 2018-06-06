@@ -1,5 +1,5 @@
 # [Scout App](https://travel-scout.herokuapp.com/)
-Most individuals have limited vacation time and resources, this app will help them narrow down their vacation options to those that will give them a better return on their investment. Scout is a full stack application that uses a current cost index to help a user compare locations and find their next vacation destination.
+Most individuals have limited vacation time and resources, this app will help them narrow down their vacation options to those that will give them a better return on their investment. Scout is a full stack application that uses a current cost index to help a user compare locations and find their next vacation destination. Flight data is scraped using a python program that can be found in my [Python-Scraper](https://github.com/ddanskin/python-scraper) repo. 
 
 # To Use
 Log in with email: mary@email.com password: test123
