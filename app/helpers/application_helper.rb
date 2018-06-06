@@ -31,13 +31,13 @@ module ApplicationHelper
             user_rating = get_rating(destination, current_user)
             case user_rating.rating
             when 1
-                sorted_destinations.push([destination, (scout_index * 1.01)])
+                sorted_destinations.push([destination, (scout_index * 1.10)])
             when 2
-                sorted_destinations.push([destination, (scout_index * 1.005)])
+                sorted_destinations.push([destination, (scout_index * 1.05)])
             when 4
-                sorted_destinations.push([destination, (scout_index * 0.995)])
+                sorted_destinations.push([destination, (scout_index * 0.95)])
             when 5
-                sorted_destinations.push([destination, (scout_index * 0.99)])
+                sorted_destinations.push([destination, (scout_index * 0.90)])
             else
                 sorted_destinations.push([destination, scout_index])
             end
