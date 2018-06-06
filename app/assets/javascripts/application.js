@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require turbolinks
 //= require activestorage
+//= require home
 //= require_tree .
