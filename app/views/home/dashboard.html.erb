@@ -6,7 +6,7 @@
                 <th>Destinations</th>
                 <th>Your Rating</th>
                 <th>Scout Index</th>
-                <th>Currency</th>
+                <th>Exchange Rate(USD base)</th>
             </tr>
         <% @destinations.each do |destination| %>
             <% @rating = get_rating(destination, current_user) %>
@@ -17,10 +17,9 @@
                 <td><%= render 'destination_ratings/form', destination_rating: @rating %></td>
                 <% scout_index_value = get_scout_index(cost_index) %>
                 <td><%= scout_index_value %></td>
-                <td><%= cost_index.currency %></td>
+                <td><%= @currency_rates["rates"][cost_index.currency] %></td>
             </tr>
         <% end %>
         </table>
-        <%= @currency_rates %>
     </div>
 </div>
