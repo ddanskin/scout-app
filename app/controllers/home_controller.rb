@@ -1,3 +1,4 @@
+require 'open_exchange'
 class HomeController < ApplicationController
     before_action :authenticate_user!, :except => [:index]
     protect_from_forgery with: :exception
@@ -6,6 +7,7 @@ class HomeController < ApplicationController
     end
 
     def dashboard
+        @currency_rates = OpenExchangeApi.new.get_rates
         @ratings = DestinationRating.where(user_id: current_user.id)
         @destinations = get_destination_list(current_user, @ratings)
 
