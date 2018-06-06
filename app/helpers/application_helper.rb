@@ -31,8 +31,6 @@ module ApplicationHelper
             user_rating = get_rating(destination, current_user)
             case user_rating.rating
             when 1
-                puts scout_index
-                puts (scout_index * 1.10)
                 sorted_destinations.push([destination, (scout_index * 1.01)])
             when 2
                 sorted_destinations.push([destination, (scout_index * 1.005)])
@@ -44,7 +42,7 @@ module ApplicationHelper
                 sorted_destinations.push([destination, scout_index])
             end
         end
-        sorted_destinations.sort { |a, b| a[1] <=> b[1] }
+        sorted_destinations = sorted_destinations.sort { |a, b| a[1] <=> b[1] }
         results = []
         sorted_destinations.each do |destination|
             results.push(destination[0])
