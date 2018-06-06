@@ -8,18 +8,20 @@
                 <th>Scout Index</th>
                 <th>Exchange Rate(USD base)</th>
             </tr>
-        <% @destinations.each do |destination| %>
-            <% @rating = get_rating(destination, current_user) %>
-            <% cost_index = get_cost_index(destination) %>
-            <tr>
-                <td><%= link_to "#{destination.name}", "#{destination.url}", target: "_blank", rel: "nofollow" %></td>
-                <!--<td><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td> -->
-                <td><%= render 'destination_ratings/form', destination_rating: @rating %></td>
-                <% scout_index_value = get_scout_index(cost_index) %>
-                <td><%= scout_index_value %></td>
-                <td><%= @currency_rates["rates"][cost_index.currency] %></td>
-            </tr>
-        <% end %>
+            <% destinations = sort_results(current_user, @currency_rates, @destinations) %>
+            <% destinations.each do |destination| %>
+                <% @rating = get_rating(destination, current_user) %>
+                <% cost_index = get_cost_index(destination) %>
+                <% exchange_rate = (@currency_rates["rates"][cost_index.currency]).round(2) %>
+                <tr>
+                    <td><%= link_to "#{destination.name}", "#{destination.url}", target: "_blank", rel: "nofollow" %></td>
+                    <!--<td><%= link_to "find flights", "https://www.expedia.com/Flights?v=b", target: "_blank", rel: "nofollow" %></td> -->
+                    <td><%= render 'destination_ratings/form', destination_rating: @rating %></td>
+                    <% scout_index_value = get_scout_index(cost_index, exchange_rate) %>
+                    <td><%= scout_index_value %></td>
+                    <td><%= exchange_rate %></td>
+                </tr>
+            <% end %>
         </table>
     </div>
 </div>
