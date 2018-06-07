@@ -14,7 +14,7 @@
   <div class="field">
     <!--<%= form.number_field :rating, max: 5, min: 1 %>-->
     <%= form.collection_radio_buttons :rating, [[1], [2], [3], [4], [5]], :first, :last, hide_label: true,inline: true, item_wrapper_tag: false, boolean_style: :inline do |b| %>
-  <%= b.radio_button + b.label {''} %>
+    <%= b.radio_button + b.label {''} %>
 <% end %>
   </div>
 

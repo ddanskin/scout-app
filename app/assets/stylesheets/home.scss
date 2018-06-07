@@ -9,7 +9,10 @@ body {
     nav {
         background-color: rgba(247, 249, 251, 0.9);
     }
-    .container{
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .welcome {
             background: none;
             margin-top: 5%;
@@ -17,10 +20,12 @@ body {
 
         }
         #main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             margin-top: 10%;
-            .results {
-                background-color: rgba(247, 249, 251, 0.9);
-            }
+            background-color: rgba(247, 249, 251, 0.9);
+
         }
     }
 }
