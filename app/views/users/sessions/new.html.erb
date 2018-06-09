@@ -5,7 +5,7 @@
         <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form_segment">
                 <p>Sign in and start planning your next vacation!</p>
-                <p> demo log in email: mary@emaill.com password: test123 </p>
+                <p> demo log in email: mary@email.com password: test123 </p>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
 
                 <%= f.password_field :password, autocomplete: "off" %>
